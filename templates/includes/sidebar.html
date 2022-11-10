@@ -1,0 +1,44 @@
+
+
+    <div class="sidebar">
+      <div class="sidebar-wrapper">
+        <div class="logo">
+          <a target="_blank" rel="sponsored noopener noreferrer" 
+             href="#" class="simple-text logo-mini">
+            APAC
+          </a>
+          <a target="_blank" rel="sponsored noopener noreferrer" 
+             href="#" class="simple-text logo-normal">
+            Design
+          </a>
+        </div>
+
+        <ul class="nav">
+        {% if request.user.is_authenticated %}
+
+          <li class="{% if 'index' in segment %} active {% endif %}">
+            <a href="/">
+              <i class="tim-icons icon-chart-pie-36"></i>
+              <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="{% if 'page-user' in segment %} active {% endif %}">
+            <a href="/page-user.html">
+              <i class="tim-icons icon-single-02"></i>
+              <p>User Profile</p>
+            </a>
+          </li>
+          {% else %}
+          <li class="active">
+            <a target="_blank" 
+               >
+              <i class="tim-icons icon-spaceship"></i>
+              <p>Login/Register</p>
+            </a>
+          </li>   
+          {% endif %}
+                    
+        </ul>
+        
+      </div>
+    </div>
